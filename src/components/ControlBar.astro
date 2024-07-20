@@ -1,7 +1,14 @@
 ---
+import ThemeSwitcher from './ThemeSwitcher.astro';
 ---
 <div>
-	<button>Light</button>
-	<button>Dark</button>
+	<ThemeSwitcher />
 	<button onClick="window.print()">Print this page</button>
 </div>
+
+<style>
+	div {
+		display: flex;
+		justify-content: flex-end;
+	}
+</style>
