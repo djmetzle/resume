@@ -1,7 +1,19 @@
 ---
 import { Icon } from 'astro-icon/components';
 ---
-<span>Made with Astro</span>
-<a href="https://github.com/djmetzle/djmetle.io-resume">
-<Icon name="icomoon-free:github" /> <span>djmetzle/resume</span>
-</a>
+<div>
+	Made with Astro
+	<a href="https://github.com/djmetzle/djmetle.io-resume">
+		<Icon name="icomoon-free:github" /> djmetzle/resume
+	</a>
+<div>
+
+<style>
+	div {
+		display: flex;
+		justify-content: space-between;
+	}
+	a {
+		margin-left: auto;
+	}
+</style>
