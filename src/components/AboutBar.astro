@@ -2,10 +2,15 @@
 import { Icon } from 'astro-icon/components';
 ---
 <div>
-	Made with Astro
+	<span>
+	Made with: <a href="https://astro.build/"><Icon name="simple-icons:astro" />Astro</a>
+	</span>
+
+	<span>
 	<a href="https://github.com/djmetzle/djmetle.io-resume">
-		<Icon name="icomoon-free:github" /> djmetzle/resume
+		<Icon name="icomoon-free:github" />djmetzle/resume
 	</a>
+	<span>
 <div>
 
 <style>
@@ -13,7 +18,10 @@ import { Icon } from 'astro-icon/components';
 		display: flex;
 		justify-content: space-between;
 	}
-	a {
-		margin-left: auto;
+	span {
+		padding: 0 1em
+	}
+	[data-icon] {
+		padding: 0 0.2em
 	}
 </style>
