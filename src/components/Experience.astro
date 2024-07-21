@@ -1,36 +1,29 @@
 ---
+import Position from './Position.astro'
 ---
 
 <section>
 	<h2>Experience</h2>
-	<section>
-		<h3>Fixit/Dozuki</h3>
-		<h4>Devops Engineer</h4>
-		<h5>Aug 2016 - Present</h5>
-		<section>
-			<span>Responsibilities</span>
-			<ul>
-				<li>Application backend, frontend, and testing development</li>
-				<li>Cloud Network engineering, with VPC, HAProxy, and CloudFront</li>
-				<li>MySQL and RedHat OS maintenance, hardening, and dependency management</li>
-				<li>CI/CD pipeline development with Github Actions and GoCD</li>
-				<li>BI infrastructure maintenance for R, Shiny, Airflow, and MongoDB</li>
-				<li>Application containerization with Docker, Kubernetes, and Replicated</li>
-			</ul>
-		</section>
-	</section>
-	<section>
-		<h3>United States Army</h3>
-		<h4>MOS 25B - IT Specialist</h4>
-		<h5>Oct 2011 - Aug 2016</h5>
-		<section>
-			<span>Responsibilities</span>
-			<ul>
-				<li>Network Operator for the Warfighter Information Network-Tactical</li>
-				<li>Mission Planner for the Regional Hub Node</li>
-				<li>Unit Information Management Officer - InfoSec and Active Directory Adminstration</li>
-				<li>Honorably Dischaged</li>
-			</ul>
-		</section>
-	</section>
+	<Position
+		company="iFixit/Dozuki"
+		position="DevOps Engineer"
+		timeperiod="Aug 2016 - Present"
+	>
+		<li>Application backend, frontend, and testing development</li>
+		<li>Cloud Network engineering, with VPC, HAProxy, and CloudFront</li>
+		<li>MySQL and RedHat OS maintenance, hardening, and dependency management</li>
+		<li>CI/CD pipeline development with Github Actions and GoCD</li>
+		<li>BI infrastructure maintenance for R, Shiny, Airflow, and MongoDB</li>
+		<li>Application containerization with Docker, Kubernetes, and Replicated</li>
+	</Position>
+	<Position
+		company="United States Army"
+		position="MOS 25B - IT Specialist"
+		timeperiod="Oct 2011 - Aug 2016"
+	>
+		<li>Network Operator for the Warfighter Information Network-Tactical</li>
+		<li>Mission Planner for the Regional Hub Node</li>
+		<li>Unit Information Management Officer - InfoSec and Active Directory Adminstration</li>
+		<li>Honorably Dischaged</li>
+	</Position>
 </section>

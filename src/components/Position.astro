@@ -1,0 +1,16 @@
+---
+const { company, position, timeperiod } = Astro.props;
+---
+<section>
+	<div>
+	<h3>{company}</h3>
+	<h4>{position}</h4>
+	<h5>{timeperiod}</h5>
+	</div>
+	<section>
+		<span>Responsibilities</span>
+		<ul>
+			<slot />
+		</ul>
+	</section>
+</section>
