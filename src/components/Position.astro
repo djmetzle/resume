@@ -4,8 +4,8 @@ const { company, position, timeperiod } = Astro.props;
 <section class="position">
 	<div class="summary">
 		<h3>{company}</h3>
-		<h4>{position}</h4>
-		<h5>{timeperiod}</h5>
+		<p>{position}<p>
+		<p>{timeperiod}<p>
 	</div>
 	<div class="responsibilities">
 		<ul>
@@ -18,26 +18,26 @@ const { company, position, timeperiod } = Astro.props;
 @media print {
 	section {
 		display: grid;
-		grid-template-columns: 1fr 3fr;
+		grid-template-columns: 1fr 2fr;
 		margin-bottom: 1rem;
 	}
 
 	.summary {
 		text-align: right;
-		border-right: 0.2rem solid;
+		border-right: 0.1rem solid;
 	}
 }
 
 @media (min-width: 1200px) {
 	section {
 		display: grid;
-		grid-template-columns: 1fr 3fr;
+		grid-template-columns: 1fr 2fr;
 		margin-bottom: 1rem;
 	}
 
 	.summary {
 		text-align: right;
-		border-right: 0.2rem solid;
+		border-right: 0.1rem solid;
 	}
 }
 

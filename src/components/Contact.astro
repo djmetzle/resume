@@ -2,7 +2,20 @@
 import Social from '../components/Social.astro'
 ---
 
-<section>
-	<h1>Daryl Metzler</h1>
+<div class="social">
+	<div class="me">
+		<h1>Daryl Metzler</h1>
+	</div>
 	<Social />
 </section>
+
+<style>
+	.social {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.me {
+		padding: 0 1em
+	}
+</style>
