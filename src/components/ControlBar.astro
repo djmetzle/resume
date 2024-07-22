@@ -5,10 +5,11 @@ import ThemeSwitcher from './ThemeSwitcher.astro';
 	<ThemeSwitcher />
 	<button onClick="window.print()">Print this page</button>
 </div>
+<hr>
 
 <style>
 	@media print {
-		.controlbar {
+		hr, .controlbar {
 			display: none;
 		}
 	}
