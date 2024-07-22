@@ -11,13 +11,11 @@ import AboutBar from '../components/AboutBar.astro'
 
 <style is:global>
 body {
-	margin: auto;
-	max-width: 1200px;
-}
-
-page {
 	height: "11in";
 	width: "8in";
+	padding: 2rem;
+	margin: auto;
+	max-width: 1200px;
 }
 
 html.dark {
@@ -31,6 +29,20 @@ html.dark {
 
 a {
   color: #0000FF;
+}
+
+@media print {
+	html.dark {
+		color: #000000;
+		background-color: #FFFFFF;
+	}
+	.dark a {
+	  color: #000000;
+	}
+
+	body, a {
+	  color: #000000;
+	}
 }
 </style>
 
