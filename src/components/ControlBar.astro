@@ -1,9 +1,11 @@
 ---
+import { Icon } from 'astro-icon/components';
+
 import ThemeSwitcher from './ThemeSwitcher.astro';
 ---
 <div class="controlbar">
 	<ThemeSwitcher />
-	<button onClick="window.print()">Print this page</button>
+	<button onClick="window.print()"><Icon name="icomoon-free:printer" height="24px" width="24px" /></button>
 </div>
 <hr>
 
