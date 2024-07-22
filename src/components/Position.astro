@@ -1,16 +1,52 @@
 ---
 const { company, position, timeperiod } = Astro.props;
 ---
-<section>
-	<div>
-	<h3>{company}</h3>
-	<h4>{position}</h4>
-	<h5>{timeperiod}</h5>
+<section class="position">
+	<div class="summary">
+		<h3>{company}</h3>
+		<h4>{position}</h4>
+		<h5>{timeperiod}</h5>
 	</div>
-	<section>
-		<span>Responsibilities</span>
+	<div class="responsibilities">
 		<ul>
 			<slot />
 		</ul>
-	</section>
+	</div>
 </section>
+
+<style>
+@media print {
+	section {
+		display: grid;
+		grid-template-columns: 1fr 3fr;
+		margin-bottom: 1rem;
+	}
+
+	.summary {
+		text-align: right;
+		border-right: 0.2rem solid;
+	}
+}
+
+@media (min-width: 1200px) {
+	section {
+		display: grid;
+		grid-template-columns: 1fr 3fr;
+		margin-bottom: 1rem;
+	}
+
+	.summary {
+		text-align: right;
+		border-right: 0.2rem solid;
+	}
+}
+
+.summary {
+	text-align: center;
+	padding: 0.5rem;
+}
+
+.responsibilities {
+	padding: 0.5rem 0;
+}
+</style>
