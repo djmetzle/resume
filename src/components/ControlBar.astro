@@ -1,12 +1,18 @@
 ---
 import ThemeSwitcher from './ThemeSwitcher.astro';
 ---
-<div>
+<div class="controlbar">
 	<ThemeSwitcher />
 	<button onClick="window.print()">Print this page</button>
 </div>
 
 <style>
+	@media print {
+		.controlbar {
+			display: none;
+		}
+	}
+
 	div {
 		display: flex;
 		justify-content: space-between;

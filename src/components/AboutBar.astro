@@ -1,7 +1,7 @@
 ---
 import { Icon } from 'astro-icon/components';
 ---
-<div>
+<div class="aboutbar">
 	<span>
 	Made with: <a href="https://astro.build/"><Icon name="simple-icons:astro" />Astro</a>
 	</span>
@@ -14,6 +14,12 @@ import { Icon } from 'astro-icon/components';
 <div>
 
 <style>
+	@media print {
+		.aboutbar {
+			display: none;
+		}
+	}
+
 	div {
 		display: flex;
 		justify-content: space-between;
