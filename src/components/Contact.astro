@@ -10,12 +10,14 @@ import Social from '../components/Social.astro'
 </section>
 
 <style>
+@media print, (min-width: 1200px) {
 	.social {
 		display: flex;
 		justify-content: space-between;
 	}
+}
 
-	.me {
-		padding: 0 1em
-	}
+.me {
+	padding: 0 1em
+}
 </style>
