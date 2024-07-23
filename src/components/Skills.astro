@@ -1,7 +1,70 @@
 ---
 ---
 
-<section>
-	<h2>Skill Set</h2>
-	<p></p>
+<h2>Skill Set</h2>
+<section class="skills">
+	<div class="skill">
+		<h3>Platforms</h3>
+		<ul>
+			<li>AWS</li>
+			<li>Kubernetes</li>
+			<li>Azure</li>
+		</ul>
+	</div>
+	<div class="skill">
+		<h3>Competencies</h3>
+		<ul>
+			<li>Linux</li>
+			<li>CI/CD</li>
+			<li>DDD</li>
+			<li>TDD</li>
+		</ul>
+	</div>
+	<div class="skill">
+		<h3>Languages</h3>
+		<ul>
+			<li>PHP</li>
+			<li>Bash</li>
+			<li>Ruby</li>
+			<li>Javascript</li>
+		</ul>
+	</div>
+	<div class="skill">
+		<h3>Tools</h3>
+		<ul>
+			<li>Ansible</li>
+			<li>Terraform</li>
+			<li>Packer</li>
+		</ul>
+	</div>
 </section>
+
+<style>
+section {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	justify-items: center;
+	padding: 1rem;
+}
+
+h3 {
+	font-size: 12pt;
+}
+
+@media print {
+	section {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+		margin: 0;
+	}
+}
+
+@media (min-width: 1200px) {
+	section {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+		margin-bottom: 1rem;
+	}
+}
+
+</style>
