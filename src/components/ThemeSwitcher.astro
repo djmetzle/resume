@@ -31,5 +31,9 @@ import { Icon } from 'astro-icon/components';
     element.classList.toggle("dark");
   }
 
+  const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  console.info(prefersDark);
+  if (prefersDark) { handleToggleClick(); }
+
   document.getElementById("themeToggle").addEventListener("click", handleToggleClick);
 </script>
