@@ -6,6 +6,9 @@ on:
       - master
   workflow_dispatch:
 
+concurrency:
+  group: deploy
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
