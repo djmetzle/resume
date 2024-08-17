@@ -36,3 +36,6 @@ jobs:
         with:
           aws-region: us-west-1
           role-to-assume: arn:aws:iam::177613294657:role/resume-djmetzle-io-deploy
+
+      - name: Update site
+        run: aws --region us-west-1 s3 sync ./dist s3://djmetzle-io-resume/
