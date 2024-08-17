@@ -1,6 +1,15 @@
+resource "aws_cloudfront_origin_access_control" "cf_oac" {
+  name                              = "s3-cloudfront-oac"
+  description                       = "Grant cloudfront access to s3 bucket ${aws_s3_bucket.site_s3_bucket.id}"
+  origin_access_control_origin_type = "s3"
+  signing_behavior                  = "always"
+  signing_protocol                  = "sigv4"
+}
+
 resource "aws_cloudfront_distribution" "site_cloudfront" {
   origin {
     domain_name              = aws_s3_bucket.site_s3_bucket.bucket_regional_domain_name
+    origin_access_control_id = aws_cloudfront_origin_access_control.cf_oac.id
     origin_id                = "siteS3Bucket"
   }
 
