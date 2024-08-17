@@ -34,4 +34,5 @@ jobs:
       - name: AWS login
         uses: aws-actions/configure-aws-credentials@v4
         with:
+          aws-region: us-west-1
           role-to-assume: arn:aws:iam::177613294657:role/resume-djmetzle-io-deploy
