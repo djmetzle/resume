@@ -13,6 +13,8 @@ resource "aws_cloudfront_distribution" "site_cloudfront" {
     origin_id                = "siteS3Bucket"
   }
 
+  aliases = ["resume.djmetzle.io"]
+
   enabled             = true
   default_root_object = "index.html"
 
