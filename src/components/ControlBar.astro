@@ -1,23 +1,27 @@
 ---
-import { Icon } from 'astro-icon/components';
+import { Icon } from "astro-icon/components";
 
-import ThemeSwitcher from './ThemeSwitcher.astro';
+import ThemeSwitcher from "./ThemeSwitcher.astro";
 ---
+
 <div class="controlbar">
-	<ThemeSwitcher />
-	<button onclick="window.print()"><Icon name="icomoon-free:printer" size={24} /></button>
+  <ThemeSwitcher />
+  <button onclick="window.print()"
+    ><Icon name="icomoon-free:printer" size={24} /></button
+  >
 </div>
-<hr>
+<hr />
 
 <style>
-	@media print {
-		hr, .controlbar {
-			display: none;
-		}
-	}
+  @media print {
+    hr,
+    .controlbar {
+      display: none;
+    }
+  }
 
-	div {
-		display: flex;
-		justify-content: space-between;
-	}
+  div {
+    display: flex;
+    justify-content: space-between;
+  }
 </style>

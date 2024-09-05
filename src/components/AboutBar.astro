@@ -1,35 +1,40 @@
 ---
-import { Icon } from 'astro-icon/components';
+import { Icon } from "astro-icon/components";
 ---
-<hr>
+
+<hr />
 <div class="aboutbar">
-	<span>
-	Made with: <a href="https://astro.build/"><Icon name="simple-icons:astro" />Astro</a>
-	</span>
+  <span>
+    Made with: <a href="https://astro.build/"
+      ><Icon name="simple-icons:astro" />Astro</a
+    >
+  </span>
 
-	<span>
-	<a href="https://github.com/djmetzle/resume">
-		<Icon name="icomoon-free:github" />djmetzle/resume
-	</a>
-	<span>
-<div>
+  <span>
+    <a href="https://github.com/djmetzle/resume">
+      <Icon name="icomoon-free:github" />djmetzle/resume
+    </a>
+    <span>
+      <div>
+        <style>
+          @media print {
+            hr,
+            .aboutbar {
+              display: none;
+            }
+          }
 
-
-<style>
-	@media print {
-		hr, .aboutbar {
-			display: none;
-		}
-	}
-
-	div {
-		display: flex;
-		justify-content: space-between;
-	}
-	span {
-		padding: 0 1em
-	}
-	[data-icon] {
-		padding: 0 0.2em
-	}
-</style>
+          div {
+            display: flex;
+            justify-content: space-between;
+          }
+          span {
+            padding: 0 1em;
+          }
+          [data-icon] {
+            padding: 0 0.2em;
+          }
+        </style>
+      </div></span
+    ></span>
+</div>

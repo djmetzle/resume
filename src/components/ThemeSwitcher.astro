@@ -1,6 +1,7 @@
 ---
-import { Icon } from 'astro-icon/components';
+import { Icon } from "astro-icon/components";
 ---
+
 <button id="themeToggle">
   <Icon name="icomoon-free:icomoon" size={32} class="moon" />
   <Icon name="icomoon-free:sun" size={32} class="sun" />
@@ -11,29 +12,43 @@ import { Icon } from 'astro-icon/components';
     border: 0;
     background: none;
   }
-  .sun { fill: black; }
-  .moon { fill: transparent; }
+  .sun {
+    fill: black;
+  }
+  .moon {
+    fill: transparent;
+  }
 
-[data-icon="icomoon-free:sun"] {
-	color: transparent;
-}
-[data-icon="icomoon-free:icomoon"] {
-	color: black;
-}
+  [data-icon="icomoon-free:sun"] {
+    color: transparent;
+  }
+  [data-icon="icomoon-free:icomoon"] {
+    color: black;
+  }
 
-  :global(.dark) [data-icon="icomoon-free:sun"] { color: white; }
-  :global(.dark) [data-icon="icomoon-free:icomoon"] { color: transparent; }
+  :global(.dark) [data-icon="icomoon-free:sun"] {
+    color: white;
+  }
+  :global(.dark) [data-icon="icomoon-free:icomoon"] {
+    color: transparent;
+  }
 </style>
 
 <script is:inline>
   const handleToggleClick = () => {
     const element = document.documentElement;
     element.classList.toggle("dark");
+  };
+
+  const prefersDark =
+    window.matchMedia &&
+    window.matchMedia("(prefers-color-scheme: dark)").matches;
+  console.info(prefersDark);
+  if (prefersDark) {
+    handleToggleClick();
   }
 
-  const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-  console.info(prefersDark);
-  if (prefersDark) { handleToggleClick(); }
-
-  document.getElementById("themeToggle").addEventListener("click", handleToggleClick);
+  document
+    .getElementById("themeToggle")
+    .addEventListener("click", handleToggleClick);
 </script>

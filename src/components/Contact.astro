@@ -1,29 +1,28 @@
 ---
-import Social from '../components/Social.astro'
+import Social from "../components/Social.astro";
 ---
 
 <div class="social">
-	<div class="me">
-		<h1 class="myname">Daryl Metzler</h1>
-	</div>
-	<Social />
-</section>
+  <div class="me">
+    <h1 class="myname">Daryl Metzler</h1>
+  </div>
+  <Social />
+</div>
 
 <style>
-.me {
-	padding: 0 1rem;
-}
+  .me {
+    padding: 0 1rem;
+  }
 
-.myname {
-	font-size: 24pt;
-	padding-left: 3rem;
-}
+  .myname {
+    font-size: 24pt;
+    padding-left: 3rem;
+  }
 
-@media print, (min-width: 1200px) {
-	.social {
-		display: flex;
-		justify-content: space-between;
-	}
-}
-
+  @media print, (min-width: 1200px) {
+    .social {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
 </style>

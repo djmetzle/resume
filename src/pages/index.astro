@@ -1,92 +1,94 @@
 ---
-import MainLayout from '../layouts/MainLayout.astro'
+import MainLayout from "../layouts/MainLayout.astro";
 
-import ControlBar from '../components/ControlBar.astro'
-import Contact from '../components/Contact.astro'
-import Education from '../components/Education.astro'
-import Experience from '../components/Experience.astro'
-import Skills from '../components/Skills.astro'
-import AboutBar from '../components/AboutBar.astro'
+import ControlBar from "../components/ControlBar.astro";
+import Contact from "../components/Contact.astro";
+import Education from "../components/Education.astro";
+import Experience from "../components/Experience.astro";
+import Skills from "../components/Skills.astro";
+import AboutBar from "../components/AboutBar.astro";
 ---
 
 <style is:global>
-body {
-	height: "11in";
-	width: "8in";
-	padding: 1rem;
-	margin: auto;
-	max-width: 1200px;
-}
+  body {
+    height: "11in";
+    width: "8in";
+    padding: 1rem;
+    margin: auto;
+    max-width: 1200px;
+  }
 
-html.dark {
-  background-color: #111;
-  color: #C0FFEF;
-}
+  html.dark {
+    background-color: #111;
+    color: #c0ffef;
+  }
 
-.dark a {
-  color: #00ff80;
-}
+  .dark a {
+    color: #00ff80;
+  }
 
-a {
-  color: #0000FF;
-}
+  a {
+    color: #0000ff;
+  }
 
-hr {
-	border: none;
-	border-top: 0.1rem solid;
-}
+  hr {
+    border: none;
+    border-top: 0.1rem solid;
+  }
 
-h1, h2 {
-	padding-left: 1rem;
-}
+  h1,
+  h2 {
+    padding-left: 1rem;
+  }
 
-h1, h2 {
-	margin-bottom: 0;
-}
+  h1,
+  h2 {
+    margin-bottom: 0;
+  }
 
-ul {
-	list-style-type: square;
-}
+  ul {
+    list-style-type: square;
+  }
 
-@media print {
-	html.dark {
-		color: #000000;
-		background-color: #FFFFFF;
-	}
-	.dark a {
-		color: #000000;
-	}
+  @media print {
+    html.dark {
+      color: #000000;
+      background-color: #ffffff;
+    }
+    .dark a {
+      color: #000000;
+    }
 
-	body, a {
-		color: #000000;
-	}
+    body,
+    a {
+      color: #000000;
+    }
 
-	h1 {
-		font-size: 16pt;
-	}
-	h2 {
-		font-size: 14pt;
-	}
+    h1 {
+      font-size: 16pt;
+    }
+    h2 {
+      font-size: 14pt;
+    }
 
-	h3 {
-		font-size: 12pt;
-	}
+    h3 {
+      font-size: 12pt;
+    }
 
-	* {
-		font-size: 10pt;
-	}
-}
+    * {
+      font-size: 10pt;
+    }
+  }
 </style>
 
 <MainLayout title="djmetzle.io - Resume">
-	<ControlBar />
-	<Contact />
-	<hr>
-	<Experience />
-	<hr>
-	<Education />
-	<hr>
-	<Skills />
-	<AboutBar />
+  <ControlBar />
+  <Contact />
+  <hr />
+  <Experience />
+  <hr />
+  <Education />
+  <hr />
+  <Skills />
+  <AboutBar />
 </MainLayout>
-

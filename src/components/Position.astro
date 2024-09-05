@@ -1,52 +1,58 @@
 ---
 const { company, position, timeperiod } = Astro.props;
 ---
+
 <section class="position">
-	<div class="summary">
-		<h3>{company}</h3>
-		<p>{position}<p>
-		<p>{timeperiod}<p>
-	</div>
-	<div class="responsibilities">
-		<ul>
-			<slot />
-		</ul>
-	</div>
+  <div class="summary">
+    <h3>{company}</h3>
+    <p>
+      {position}<p>
+        <p>
+          {timeperiod}<p></p>
+          <div class="responsibilities">
+            <ul>
+              <slot />
+            </ul>
+          </div>
+        </p>
+
+        <style>
+          @media print {
+            section {
+              display: grid;
+              grid-template-columns: 1fr 2fr;
+              margin-bottom: 1rem;
+            }
+
+            .summary {
+              text-align: right;
+              border-right: 0.1rem solid;
+            }
+          }
+
+          @media (min-width: 1200px) {
+            section {
+              display: grid;
+              grid-template-columns: 1fr 2fr;
+              margin-bottom: 1rem;
+            }
+
+            .summary {
+              text-align: right;
+              border-right: 0.1rem solid;
+            }
+          }
+
+          .summary {
+            text-align: center;
+            padding: 0.5rem;
+          }
+
+          .responsibilities {
+            padding: 0.5rem 0;
+          }
+        </style>
+      </p>
+    </p>
+  </div>
 </section>
-
-<style>
-@media print {
-	section {
-		display: grid;
-		grid-template-columns: 1fr 2fr;
-		margin-bottom: 1rem;
-	}
-
-	.summary {
-		text-align: right;
-		border-right: 0.1rem solid;
-	}
-}
-
-@media (min-width: 1200px) {
-	section {
-		display: grid;
-		grid-template-columns: 1fr 2fr;
-		margin-bottom: 1rem;
-	}
-
-	.summary {
-		text-align: right;
-		border-right: 0.1rem solid;
-	}
-}
-
-.summary {
-	text-align: center;
-	padding: 0.5rem;
-}
-
-.responsibilities {
-	padding: 0.5rem 0;
-}
-</style>
