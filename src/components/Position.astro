@@ -7,11 +7,11 @@ const { company, position, timeperiod } = Astro.props;
     <h3>{company}</h3>
     <p>{position}</p>
     <p>{timeperiod}</p>
-    <div class="responsibilities">
+  </div>
+  <div class="responsibilities">
       <ul>
         <slot />
       </ul>
-    </div>
   </div>
 </section>
 
