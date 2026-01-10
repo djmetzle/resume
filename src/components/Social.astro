@@ -5,21 +5,106 @@ import { Icon } from "astro-icon/components";
 <div>
   <ul>
     <li>
-      <Icon name="simple-icons:gmail" /> Email: <a
-        href="mailto:daryljmetzler@gmail.com">daryljmetzler@gmail.com</a>
+      <Icon name="simple-icons:gmail" />
+      <span class="contact-label">Email:</span>
+      <a href="mailto:daryljmetzler@gmail.com">daryljmetzler@gmail.com</a>
     </li>
     <li>
-      <Icon name="icomoon-free:github" /> Github: <a
-        href="https://github.com/djmetzle">@djmetzle</a>
+      <Icon name="icomoon-free:github" />
+      <span class="contact-label">Github:</span>
+      <a href="https://github.com/djmetzle">@djmetzle</a>
     </li>
     <li>
-      <Icon name="simple-icons:linkedin" /> LinkedIn: <a
-        href="https://www.linkedin.com/in/djmetzle/">@djmetzle</a>
+      <Icon name="simple-icons:linkedin" />
+      <span class="contact-label">LinkedIn:</span>
+      <a href="https://www.linkedin.com/in/djmetzle/">@djmetzle</a>
     </li>
   </ul>
 </div>
 <style>
   ul {
     list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.25rem 0.35rem;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+    flex-wrap: wrap;
+  }
+
+  li:hover {
+    background: rgba(128, 128, 128, 0.05);
+    transform: translateX(4px);
+  }
+
+  :global(.dark) li:hover {
+    background: rgba(0, 255, 128, 0.05);
+  }
+
+  :global([data-icon]) {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    opacity: 0.8;
+  }
+
+  li:hover :global([data-icon]) {
+    opacity: 1;
+  }
+
+  .contact-label {
+    font-weight: 600;
+    opacity: 0.7;
+    width: 80px;
+    font-size: 0.9em;
+    flex-shrink: 0;
+  }
+
+  li a {
+    border-bottom: none;
+    font-weight: 500;
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+
+  @media (min-width: 1024px) {
+    ul {
+      gap: 0.25rem;
+    }
+
+    li {
+      flex: none;
+      padding: 0.2rem 0.35rem;
+    }
+  }
+
+  @media print {
+    ul {
+      gap: 0.15rem;
+    }
+
+    li {
+      padding: 0.1rem 0.25rem;
+      font-size: 9pt;
+    }
+
+    .contact-label {
+      width: 80px;
+      font-size: 0.85em;
+    }
+
+    :global([data-icon]) {
+      width: 14px;
+      height: 14px;
+    }
   }
 </style>

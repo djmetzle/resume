@@ -16,38 +16,58 @@ const { company, position, timeperiod } = Astro.props;
 </section>
 
 <style>
-  @media print {
-    section {
-      display: grid;
-      grid-template-columns: 1fr 2fr;
-      margin-bottom: 1rem;
-    }
-
-    .summary {
-      text-align: right;
-      border-right: 0.1rem solid;
-    }
+  section.position {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 1.5rem;
+    margin-bottom: 1rem;
   }
 
-  @media (min-width: 1200px) {
-    section {
-      display: grid;
-      grid-template-columns: 1fr 2fr;
-      margin-bottom: 1rem;
-    }
-
-    .summary {
-      text-align: right;
-      border-right: 0.1rem solid;
-    }
+  section.position:last-of-type {
+    margin-bottom: 0;
   }
 
   .summary {
-    text-align: center;
-    padding: 0.5rem;
+    text-align: right;
+    padding: 0.5rem 1rem 0.5rem 0.5rem;
   }
 
   .responsibilities {
     padding: 0.5rem 0;
+  }
+
+  @media (max-width: 767px) {
+    section.position {
+      grid-template-columns: 1fr;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .summary {
+      text-align: center;
+      padding: 1rem 0.5rem;
+      border-bottom: 1px solid;
+      padding-bottom: 0.75rem;
+    }
+  }
+
+  @media print {
+    section.position {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 1rem;
+      margin-bottom: 0.75rem;
+      page-break-inside: avoid;
+    }
+
+    .summary {
+      text-align: right;
+      padding: 0.3rem 0.6rem 0.3rem 0.3rem;
+      border-bottom: none;
+    }
+
+    .responsibilities {
+      padding: 0.3rem 0;
+    }
   }
 </style>

@@ -32,6 +32,12 @@ import { Icon } from "astro-icon/components";
   :global(.dark) [data-icon="icomoon-free:icomoon"] {
     color: transparent;
   }
+
+  @media print {
+    #themeToggle {
+      display: none !important;
+    }
+  }
 </style>
 
 <script is:inline>

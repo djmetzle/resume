@@ -13,15 +13,24 @@ import ThemeSwitcher from "./ThemeSwitcher.astro";
 <hr />
 
 <style>
-  @media print {
-    hr,
-    .controlbar {
-      display: none;
-    }
-  }
-
-  div {
+  div.controlbar {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.25rem 0 0.5rem;
+    margin-bottom: 0;
+  }
+
+  hr {
+    margin: 0.5em 0;
+  }
+
+  @media print {
+    hr,
+    .controlbar,
+    .controlbar * {
+      display: none !important;
+    }
   }
 </style>

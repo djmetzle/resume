@@ -10,73 +10,285 @@ import AboutBar from "../components/AboutBar.astro";
 ---
 
 <style is:global>
+  :root {
+  }
+
   body {
     height: "11in";
     width: "8in";
-    padding: 1rem;
+    padding: 0.5rem;
     margin: auto;
     max-width: 1200px;
   }
 
+  @media (min-width: 768px) {
+    body {
+      padding: 1rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    body {
+      padding: 1.5rem;
+    }
+  }
+
   html.dark {
-    background-color: #111;
+    background-color: #0a0a0a;
     color: #c0ffef;
+  }
+
+  html.dark::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+      radial-gradient(
+        circle at 20% 50%,
+        rgba(0, 255, 128, 0.03) 0%,
+        transparent 50%
+      ),
+      radial-gradient(
+        circle at 80% 80%,
+        rgba(192, 255, 239, 0.02) 0%,
+        transparent 50%
+      );
+    pointer-events: none;
+    z-index: -1;
   }
 
   .dark a {
     color: #00ff80;
+    text-shadow: 0 0 1px rgba(0, 255, 128, 0.3);
+  }
+
+  .dark a:hover {
+    text-shadow: 0 0 8px rgba(0, 255, 128, 0.3);
+  }
+
+  .dark h1,
+  .dark h2 {
+    color: #e0fff5;
+    text-shadow: 0 0 20px rgba(0, 255, 128, 0.1);
+  }
+
+  .dark hr,
+  .dark .summary {
+    border-color: rgba(0, 255, 128, 0.3);
   }
 
   a {
     color: #0000ff;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: all 0.2s ease;
+    padding-bottom: 1px;
+  }
+
+  a:hover {
+    border-bottom-color: currentColor;
+    opacity: 0.8;
+  }
+
+  a:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  button {
+    border: 1px solid currentColor;
+    background: transparent;
+    padding: 0.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.7;
+    color: inherit;
+    font-family: inherit;
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  button:hover {
+    opacity: 1;
+    background: rgba(128, 128, 128, 0.1);
+    transform: translateY(-1px);
+  }
+
+  button:active {
+    transform: translateY(0);
+  }
+
+  button:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
+  }
+
+  .dark button:hover {
+    background: rgba(0, 255, 128, 0.1);
+    box-shadow: 0 0 12px rgba(0, 255, 128, 0.2);
   }
 
   hr {
     border: none;
-    border-top: 0.1rem solid;
+    border-top: 1px solid;
+    opacity: 0.2;
+    margin: 2rem 0;
   }
 
-  h1,
-  h2 {
+  @media (min-width: 768px) {
+    hr {
+      margin: 2.5rem 0;
+    }
+  }
+
+  h1 {
+    font-size: clamp(20pt, 4vw, 24pt);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-top: 0;
+    margin-bottom: 0.25rem;
     padding-left: 1rem;
   }
 
-  h1,
   h2 {
-    margin-bottom: 0;
+    font-size: clamp(14pt, 3vw, 16pt);
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    margin-bottom: 0.5rem;
+    margin-top: 1.5rem;
+    padding-left: 0;
+    padding-bottom: 0.25rem;
+    opacity: 1;
+    border-bottom: 1px solid #999;
+  }
+
+  .dark h2 {
+    border-bottom-color: rgba(255, 255, 255, 0.4);
+  }
+
+  section > h2:first-child,
+  h2:first-of-type {
+    margin-top: 0;
+  }
+
+  h3 {
+    font-size: clamp(11pt, 2.5vw, 12pt);
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+  }
+
+  p {
+    margin: 0.5rem 0;
+    line-height: 1.5;
   }
 
   ul {
     list-style-type: square;
+    margin: 0;
+    padding-left: 1.5rem;
+  }
+
+  li {
+    margin-bottom: 0.35rem;
+    line-height: 1.5;
+  }
+
+  li:last-child {
+    margin-bottom: 0;
+  }
+
+  *:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
+    border-radius: 2px;
   }
 
   @media print {
-    html.dark {
-      color: #000000;
-      background-color: #ffffff;
-    }
-    .dark a {
-      color: #000000;
+    html.dark::before {
+      display: none;
     }
 
-    body,
+    * {
+      text-shadow: none !important;
+      box-shadow: none !important;
+      transition: none !important;
+      color: #000000 !important;
+    }
+
+    button {
+      display: none !important;
+    }
+
+    html.dark {
+      color: #000000 !important;
+      background-color: #ffffff !important;
+    }
+
+    .dark h1,
+    .dark h2,
+    .dark h3,
+    .dark p,
+    .dark li,
+    .dark a {
+      color: #000000 !important;
+    }
+
+    body {
+      color: #000000 !important;
+      padding: 0.75rem !important;
+    }
+
     a {
-      color: #000000;
+      color: #000000 !important;
+      border-bottom: none;
+    }
+
+    hr {
+      opacity: 1;
+      border-top: 1px solid #000;
+    }
+
+    .dark hr,
+    .dark .summary {
+      border-color: #000000 !important;
     }
 
     h1 {
       font-size: 16pt;
     }
+
     h2 {
-      font-size: 14pt;
+      font-size: 13pt;
+      margin-top: 0.75rem;
+      margin-bottom: 0.35rem;
+      padding-bottom: 0.2rem;
+      border-bottom: 1px solid #999;
     }
 
     h3 {
-      font-size: 12pt;
+      font-size: 11pt;
+      margin-bottom: 0.2rem;
+    }
+
+    p {
+      margin: 0.3rem 0;
+    }
+
+    li {
+      margin-bottom: 0.3rem;
+      line-height: 1.45;
     }
 
     * {
-      font-size: 10pt;
+      font-size: 9.5pt;
     }
   }
 </style>
@@ -84,11 +296,8 @@ import AboutBar from "../components/AboutBar.astro";
 <MainLayout title="djmetzle.io - Resume">
   <ControlBar />
   <Contact />
-  <hr />
   <Experience />
-  <hr />
   <Education />
-  <hr />
   <Skills />
   <AboutBar />
 </MainLayout>

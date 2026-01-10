@@ -24,15 +24,31 @@ import { Icon } from "astro-icon/components";
             }
           }
 
+          hr {
+            margin: 1.5rem 0 1rem;
+          }
+
           div {
             display: flex;
             justify-content: space-between;
+            align-items: center;
           }
           span {
             padding: 0 1em;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25em;
+          }
+          a {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25em;
           }
           [data-icon] {
-            padding: 0 0.2em;
+            width: 16px;
+            height: 16px;
+            vertical-align: middle;
+            display: inline-block;
           }
         </style>
       </div></span

@@ -11,18 +11,61 @@ import Social from "../components/Social.astro";
 
 <style>
   .me {
-    padding: 0 1rem;
+    padding: 0 0.5rem;
+    margin-top: 0;
   }
 
   .myname {
-    font-size: 24pt;
-    padding-left: 3rem;
+    font-size: 20pt;
+    padding-left: 0.5rem;
+    margin-top: 0;
+    margin-bottom: 0.25rem;
   }
 
-  @media print, (min-width: 1200px) {
+  .social {
+    margin-bottom: 1rem;
+  }
+
+  @media (min-width: 768px) {
+    .myname {
+      font-size: 22pt;
+      padding-left: 2rem;
+    }
+
     .social {
       display: flex;
       justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .myname {
+      font-size: 24pt;
+      padding-left: 3rem;
+    }
+
+    .social {
+      margin-bottom: 0.75rem;
+    }
+  }
+
+  @media print {
+    .me {
+      padding: 0;
+    }
+
+    .myname {
+      font-size: 16pt;
+      padding-left: 0;
+      margin-bottom: 0;
+    }
+
+    .social {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.25rem;
     }
   }
 </style>
