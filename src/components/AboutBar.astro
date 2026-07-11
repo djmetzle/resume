@@ -9,9 +9,24 @@ import { Icon } from "astro-icon/components";
       ><Icon name="simple-icons:astro" />Astro</a
     >
   </span>
+  <span>
+    Managed with: <a href="https://www.hashicorp.com/products/terraform"
+      ><Icon name="simple-icons:terraform" />Terraform</a
+    >
+  </span>
+  <span>
+    Deployed with: <a href="https://github.com/features/actions"
+      ><Icon name="simple-icons:github" />Github Actions</a
+    >
+  </span>
+  <span>
+    Hosted on: <a href="https://aws.amazon.com/"
+      ><Icon name="lineicons:aws" />AWS</a
+    >
+  </span>
 
   <span>
-    <a href="https://github.com/djmetzle/resume">
+    Source: <a href="https://github.com/djmetzle/resume">
       <Icon name="icomoon-free:github" />djmetzle/resume
     </a>
     <span>
@@ -30,8 +45,10 @@ import { Icon } from "astro-icon/components";
 
           div {
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
+            flex-wrap: wrap;
+            gap: 0.35rem 0;
           }
           span {
             padding: 0 1em;
@@ -52,5 +69,6 @@ import { Icon } from "astro-icon/components";
           }
         </style>
       </div></span
-    ></span>
+    ></span
+  >
 </div>
