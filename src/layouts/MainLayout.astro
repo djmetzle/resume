@@ -1,5 +1,41 @@
 ---
 import { SEO } from "astro-seo";
+
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Daryl Metzler",
+  url: "https://resume.djmetzle.io/",
+  image: "https://avatars.githubusercontent.com/u/6876047",
+  email: "mailto:daryljmetzler@gmail.com",
+  jobTitle: "DevOps Engineer",
+  worksFor: {
+    "@type": "Organization",
+    name: "iFixit/Dozuki",
+  },
+  alumniOf: {
+    "@type": "CollegeOrUniversity",
+    name: "North Carolina State University",
+  },
+  sameAs: [
+    "https://www.djmetzle.io",
+    "https://github.com/djmetzle",
+    "https://www.linkedin.com/in/djmetzle/",
+  ],
+  knowsAbout: [
+    "DevOps",
+    "Site Reliability Engineering",
+    "AWS",
+    "Linux",
+    "Networking",
+    "CI/CD",
+    "Automation",
+    "Terraform",
+    "Ansible",
+    "Docker",
+    "Kubernetes",
+  ],
+};
 ---
 
 <html lang="en">
@@ -46,6 +82,10 @@ import { SEO } from "astro-seo";
       rel="stylesheet"
     />
     <link rel="sitemap" href="/sitemap-index.xml" />
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify(personSchema)}
+    />
   </head>
   <body style="font-family: Source Code Pro">
     <main>
