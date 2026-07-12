@@ -17,10 +17,22 @@ import { SEO } from "astro-seo";
         optional: {
           description:
             "Resume of Daryl Metzler - DevOps / SRE / Cloud engineer. AWS, Linux, networking, CI/CD.",
+          siteName: "resume.djmetzle.io",
         },
         image: {
+          type: "image/png",
+          width: 256,
+          height: 256,
           alt: "Daryl Metzler",
         },
+      }}
+      twitter={{
+        card: "summary",
+        title: "Daryl Metzler - Resume",
+        description:
+          "Resume of Daryl Metzler - DevOps / SRE / Cloud engineer. AWS, Linux, networking, CI/CD.",
+        image: "https://avatars.githubusercontent.com/u/6876047",
+        imageAlt: "Daryl Metzler",
       }}
       extend={{
         link: [{ rel: "icon", href: "/favicon.ico" }],
