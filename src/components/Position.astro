@@ -9,16 +9,16 @@ const { company, position, timeperiod } = Astro.props;
     <p>{timeperiod}</p>
   </div>
   <div class="responsibilities">
-      <ul>
-        <slot />
-      </ul>
+    <ul>
+      <slot />
+    </ul>
   </div>
 </section>
 
 <style>
   section.position {
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1fr 3fr;
     gap: 1.5rem;
     margin-bottom: 1rem;
   }
@@ -54,7 +54,7 @@ const { company, position, timeperiod } = Astro.props;
   @media print {
     section.position {
       display: grid;
-      grid-template-columns: 1fr 2fr;
+      grid-template-columns: 1fr 3fr;
       gap: 1rem;
       margin-bottom: 0.75rem;
       page-break-inside: avoid;
